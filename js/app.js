@@ -27,6 +27,7 @@ function animateSlides() {
 		});
 		/* animating the selected elements for each slide */
 		/* timeline.fromTo(element to animate, from, to, delay) */
+
 		slideTl.fromTo(revealImg, { x: '0%' }, { x: '100%' });
 		slideTl.fromTo(img, { scale: 2 }, { scale: 1 }, '-=1');
 		slideTl.fromTo(revealText, { x: '0%' }, { x: '100%' }, '-=0.75');
@@ -35,15 +36,14 @@ function animateSlides() {
 		/* Creation of a Scene for Slide */
 		slideScene = new ScrollMagic.Scene({
 			triggerElement: slide,
-			triggerHook: 0.55,
-			reverse: false,
+			triggerHook: 0.25,
 		})
 			/* GSAP animation */
 			.setTween(slideTl)
 			/* scrollMagic indicators */
 			.addIndicators({
 				colorStart: 'white',
-				colorTrigger: 'yellow',
+				colorTrigger: 'red',
 				name: 'slide',
 			})
 			/* scrollMagic controller */
@@ -51,10 +51,13 @@ function animateSlides() {
 
 		/* new animation */
 		const pageTl = gsap.timeline();
-		let nextSlide = slides.length - 1 === index ? 'end' : slides[index + 1];
+		let nextSlide =
+			slides.length - 1 === index ? '.fashion' : slides[index + 1];
+		console.log(nextSlide);
 		pageTl.fromTo(nextSlide, { y: '0%' }, { y: '50%' });
 		pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 });
 		pageTl.fromTo(nextSlide, { y: '50%' }, { y: '0%' }, '-=0.5');
+
 		/* new scene for page */
 		pageScene = new ScrollMagic.Scene({
 			triggerElement: slide,
@@ -62,10 +65,10 @@ function animateSlides() {
 			triggerHook: 0,
 		})
 			.addIndicators({
-				colorStart: 'white',
+				colorStart: 'blue',
 				colorTrigger: 'yellow',
 				name: 'page',
-				indent: 200,
+				indent: 300,
 			})
 			.setPin(slide, { pushFollowers: false })
 			.setTween(pageTl)

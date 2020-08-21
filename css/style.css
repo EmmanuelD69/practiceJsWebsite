@@ -153,7 +153,7 @@ body {
 .reveal-text {
 	position: absolute;
 	width: 101%;
-	height: 100%;
+	height: 150%;
 	background: #17181a;
 	top: 0;
 	left: 0;
@@ -165,4 +165,9 @@ body {
 	border: 2px solid white;
 	border-radius: 50%;
 	position: absolute;
+}
+
+/* to be able to click on button when pin spacer cover it */
+.scrollmagic-pin-spacer {
+	position: static !important;
 }
