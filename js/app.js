@@ -97,9 +97,11 @@ function activeCursor(e) {
 	}
 	if (item.classList.contains('explore')) {
 		mouse.classList.add('explore-active');
+		gsap.to('.title-swipe', 1, { y: '0%' });
 		mouseTxt.innerText = 'Tap';
 	} else {
 		mouse.classList.remove('explore-active');
+		gsap.to('.title-swipe', 1, { y: '100%' });
 		mouseTxt.innerText = '';
 	}
 }
