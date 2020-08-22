@@ -80,6 +80,7 @@ function animateSlides() {
 }
 
 let mouse = document.querySelector('.cursor');
+let mouseTxt = mouse.querySelector('span');
 /* animation du curseur de la souris */
 function cursor(e) {
 	mouse.style.top = e.pageY + 'px';
@@ -93,6 +94,13 @@ function activeCursor(e) {
 		mouse.classList.add('nav-active');
 	} else {
 		mouse.classList.remove('nav-active');
+	}
+	if (item.classList.contains('explore')) {
+		mouse.classList.add('explore-active');
+		mouseTxt.innerText = 'Tap';
+	} else {
+		mouse.classList.remove('explore-active');
+		mouseTxt.innerText = '';
 	}
 }
 

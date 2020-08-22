@@ -167,12 +167,26 @@ body {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	pointer-events: none;
-	transition: background, transform;
+	transition-property: background, transform;
+	transform-origin: 75% 75%;
 }
 
 .cursor.nav-active {
 	background: transparent;
 	transform: scale(3);
+}
+
+.cursor.explore-active {
+	background: white;
+	transform: scale(3);
+}
+
+.cursor-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 0.5rem;
+	transform: translate(-50%, -50%);
 }
 
 /* to be able to click on button when pin spacer cover it */
