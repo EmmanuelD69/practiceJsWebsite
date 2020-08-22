@@ -9,9 +9,11 @@ let pageScene;
 function animateSlides() {
 	/* Controller Init */
 	controller = new ScrollMagic.Controller();
+
 	/* Selecting Elements */
 	const sliders = document.querySelectorAll('.slide');
 	const nav = document.querySelector('.nav-header');
+
 	/* Looping over each slide */
 	sliders.forEach((slide, index, slides) => {
 		/* Selecting the elements to animate */
@@ -25,6 +27,7 @@ function animateSlides() {
 			/* to check ease animations: https://greensock.com/ease-visualizer/ */
 			defaults: { duration: 1, ease: 'power2.inOut' },
 		});
+
 		/* animating the selected elements for each slide */
 		/* timeline.fromTo(element to animate, from, to, delay) */
 
@@ -76,11 +79,23 @@ function animateSlides() {
 	});
 }
 
+let mouse = document.querySelector('.cursor');
 /* animation du curseur de la souris */
 function cursor(e) {
-	let mouse = document.querySelector('.cursor');
 	mouse.style.top = e.pageY + 'px';
 	mouse.style.left = e.pageX + 'px';
+	// console.log(mouse.style.top, mouse.style.left);
 }
+
+function activeCursor(e) {
+	const item = e.target;
+	if (item.id === 'logo' || item.classList.contains('burger')) {
+		mouse.classList.add('nav-active');
+	} else {
+		mouse.classList.remove('nav-active');
+	}
+}
+
 window.addEventListener('mousemove', cursor);
+window.addEventListener('mouseover', activeCursor);
 animateSlides();

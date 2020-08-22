@@ -166,6 +166,13 @@ body {
 	border-radius: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
+	pointer-events: none;
+	transition: background, transform;
+}
+
+.cursor.nav-active {
+	background: transparent;
+	transform: scale(3);
 }
 
 /* to be able to click on button when pin spacer cover it */
