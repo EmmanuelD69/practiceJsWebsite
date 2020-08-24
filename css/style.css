@@ -1,6 +1,12 @@
 /* font-family: 'Abril Fatface', cursive;
 font-family: 'Montserrat', sans-serif; */
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
 	background: #17181a;
 	font-family: 'Montserrat', sans-serif;
@@ -173,7 +179,7 @@ body {
 
 .cursor.nav-active {
 	background: transparent;
-	transform: scale(3);
+	transform: scale(2);
 }
 
 .cursor.explore-active {
