@@ -108,8 +108,25 @@ function activeCursor(e) {
 }
 
 function navToggle(e) {
-	gsap.to('.line1', 0.5, { rotate: '45', y: 5 });
-	gsap.to('.line2', 0.5, { rotate: '-45', y: -5 });
+	if (!e.target.classList.contains('active')) {
+		e.target.classList.add('active');
+		/* turning burger lines into a cross */
+		gsap.to('.line1', 0.5, { rotate: '45', y: 5, background: 'black' });
+		gsap.to('.line2', 0.5, { rotate: '-45', y: -5, background: 'black' });
+		/* changing logo color to black */
+		gsap.to('#logo', 1, { color: 'black' });
+		/* extending nav-bar to cover the whole page */
+		gsap.to('.nav-bar', 1, { clipPath: 'circle(2500px at 100%-10%)' });
+	} else {
+		e.target.classList.remove('active');
+		/* turning burger cross into lines */
+		gsap.to('.line1', 0.5, { rotate: '0', y: 0, background: 'black' });
+		gsap.to('.line2', 0.5, { rotate: '0', y: 0, background: 'black' });
+		/* changing logo color to white */
+		gsap.to('#logo', 1, { color: 'black' });
+		/* reducing nav-bar to disappear from main screen */
+		gsap.to('.nav-bar', 1, { clipPath: 'circle(50px at 100%-10%)' });
+	}
 }
 
 /* EVENT LISTENERS */
