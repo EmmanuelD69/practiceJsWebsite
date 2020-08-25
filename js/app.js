@@ -79,8 +79,9 @@ function animateSlides() {
 	});
 }
 
-let mouse = document.querySelector('.cursor');
-let mouseTxt = mouse.querySelector('span');
+const mouse = document.querySelector('.cursor');
+const mouseTxt = mouse.querySelector('span');
+const burger = document.querySelector('.burger');
 /* animation du curseur de la souris */
 function cursor(e) {
 	mouse.style.top = e.pageY + 'px';
@@ -106,6 +107,13 @@ function activeCursor(e) {
 	}
 }
 
+function navToggle(e) {
+	gsap.to('.line1', 0.5, { rotate: '45', y: 5 });
+	gsap.to('.line2', 0.5, { rotate: '-45', y: -5 });
+}
+
+/* EVENT LISTENERS */
+burger.addEventListener('click', navToggle);
 window.addEventListener('mousemove', cursor);
 window.addEventListener('mouseover', activeCursor);
 animateSlides();
