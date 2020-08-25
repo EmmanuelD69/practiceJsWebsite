@@ -117,15 +117,18 @@ function navToggle(e) {
 		gsap.to('#logo', 1, { color: 'black' });
 		/* extending nav-bar to cover the whole page */
 		gsap.to('.nav-bar', 1, { clipPath: 'circle(2500px at 100%-10%)' });
+		/* removing side scrolling bar */
+		document.body.classList.add('hide');
 	} else {
 		e.target.classList.remove('active');
 		/* turning burger cross into lines */
-		gsap.to('.line1', 0.5, { rotate: '0', y: 0, background: 'black' });
-		gsap.to('.line2', 0.5, { rotate: '0', y: 0, background: 'black' });
+		gsap.to('.line1', 0.5, { rotate: '0', y: 0, background: 'white' });
+		gsap.to('.line2', 0.5, { rotate: '0', y: 0, background: 'white' });
 		/* changing logo color to white */
-		gsap.to('#logo', 1, { color: 'black' });
+		gsap.to('#logo', 1, { color: 'white' });
 		/* reducing nav-bar to disappear from main screen */
 		gsap.to('.nav-bar', 1, { clipPath: 'circle(50px at 100%-10%)' });
+		document.body.classList.remove('hide');
 	}
 }
 
