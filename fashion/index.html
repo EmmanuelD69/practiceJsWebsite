@@ -18,7 +18,8 @@
 		<link rel="stylesheet" href="../css/style.css" />
 	</head>
 
-	<body>
+	<!-- Tag pour barba.js / ce qui se trouve englobé par wrapper ne sera pas affecté -->
+	<body data-barba="wrapper">
 		<header class="nav-header">
 			<h1><a href="../index.html" id="logo">days.</a></h1>
 			<!-- Burger menu icon -->
@@ -27,7 +28,8 @@
 				<div class="line2"></div>
 			</div>
 		</header>
-		<main>
+		<!-- Tag pour barba.js / ce qui se trouve englobé par container sera affecté -->
+		<main data-barba="container" data-barba-namespace="fashion">
 			<section class="fashion1 detail-slide">
 				<div class="fashion-text">
 					<h1 class="fashion-text">Luiza Bubzy</h1>

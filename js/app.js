@@ -132,6 +132,25 @@ function navToggle(e) {
 	}
 }
 
+/* introducing barba.js */
+barba.init({
+	views: [
+		{
+			namespace: 'home',
+			beforeEnter() {
+				animateSlides();
+			},
+			beforeLeave() {
+				slideScene.destroy();
+				pageScene.destroy();
+				controller.destroy();
+			},
+		},
+		{
+			namespace: 'fashion',
+		},
+	],
+});
 /* EVENT LISTENERS */
 burger.addEventListener('click', navToggle);
 window.addEventListener('mousemove', cursor);
