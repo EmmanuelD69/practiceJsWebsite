@@ -5,6 +5,7 @@
 let controller;
 let slideScene;
 let pageScene;
+let fashionScene;
 
 function animateSlides() {
 	/* Controller Init */
@@ -39,7 +40,7 @@ function animateSlides() {
 		/* Creation of a Scene for Slide */
 		slideScene = new ScrollMagic.Scene({
 			triggerElement: slide,
-			triggerHook: 0.25,
+			triggerHook: 0.35,
 		})
 			/* GSAP animation */
 			.setTween(slideTl)
@@ -156,6 +157,7 @@ barba.init({
 			beforeEnter() {
 				/* logo href need to be updated dynamicaly to work properly*/
 				logo.href = '../index.html';
+				fashionAnimation();
 				// swipeTitle.innerHTML = '...fashion';
 			},
 		},
@@ -196,6 +198,36 @@ barba.init({
 		},
 	],
 });
+
+function fashionAnimation() {
+	controller = new ScrollMagic.Controller();
+	const slides = document.querySelectorAll('.fashion-slide');
+	slides.forEach((slide, index, slides) => {
+		const slideTl = gsap.timeline({ defaults: { duration: 1 } });
+		let nextSlide = slides.length - 1 === index ? 'end' : slides[index + 1];
+		const nextImg = nextSlide.querySelector('img');
+		const nextText = nextSlide.querySelector('p');
+		slideTl.fromTo(slide, { opacity: 1 }, { opacity: 0 });
+		slideTl.fromTo(nextSlide, { opacity: 0 }, { opacity: 1 }, '-=1');
+		slideTl.fromTo(
+			nextImg,
+			{ opacity: 0, x: '200%' },
+			{ opacity: 1, x: '0%' },
+			'-=1'
+		);
+		slideTl.fromTo(nextText, { x: '-200%' }, { x: '0%' });
+
+		/* scene */
+		fashionScene = new ScrollMagic.Scene({
+			triggerElement: slide,
+			duration: '90%',
+			triggerHook: 0,
+		})
+			.setPin(slide, { pushFollowers: false })
+			.setTween(slideTl)
+			.addTo(controller);
+	});
+}
 /* EVENT LISTENERS */
 burger.addEventListener('click', navToggle);
 window.addEventListener('mousemove', cursor);
