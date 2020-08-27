@@ -12,6 +12,12 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	/* to avoid scroll bar to appear when sliders are moving */
 	overflow-x: hidden;
+	position: relative;
+}
+
+/* to position the sections of our main content one other each others */
+main {
+	position: absolute;
 }
 
 #logo {
@@ -120,7 +126,7 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgb(86, 124, 228);
+	background: rgb(255, 139, 93);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -182,7 +188,7 @@ body {
 
 .cursor.nav-active {
 	transition: all 0.2s ease-in-out;
-	background: rgb(86, 124, 228);
+	background: rgb(255, 139, 93);
 	transform: scale(3);
 }
 

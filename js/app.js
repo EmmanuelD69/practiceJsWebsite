@@ -133,12 +133,16 @@ function navToggle(e) {
 }
 
 /* introducing barba.js */
+/* we need to target the logo to apply dynamically the correct href because when animation is done, it is only done on the section, not on the nav-bar, so original logo href is still active and need to be updated */
+const logo = document.querySelector('#logo');
 barba.init({
 	views: [
 		{
 			namespace: 'home',
 			beforeEnter() {
 				animateSlides();
+				/* logo href need to be updated dynamicaly to work properly*/
+				logo.href = './index.html';
 			},
 			beforeLeave() {
 				slideScene.destroy();
@@ -148,6 +152,42 @@ barba.init({
 		},
 		{
 			namespace: 'fashion',
+			beforeEnter() {
+				/* logo href need to be updated dynamicaly to work properly*/
+				logo.href = '../index.html';
+			},
+		},
+	],
+	transitions: [
+		{
+			/* action on the current section when we leave it */
+			leave({ current, next }) {
+				/* triggering animations (see barba.js Documentation) */
+				let done = this.async();
+				/* animation */
+				const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' } });
+				tl.fromTo(
+					current.container,
+					1,
+					{ opacity: 1 },
+					{ opacity: 0, onComplete: done }
+				);
+			},
+			/* action when we enter a new section */
+			enter({ current, next }) {
+				/* triggering animations (see barba.js Documentation) */
+				let done = this.async();
+				/* scrolling up to the top of the page */
+				window.scrollTo(0, 0);
+				/* animation */
+				const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' } });
+				tl.fromTo(
+					next.container,
+					1,
+					{ opacity: 0 },
+					{ opacity: 1, onComplete: done }
+				);
+			},
 		},
 	],
 });
