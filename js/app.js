@@ -45,11 +45,11 @@ function animateSlides() {
 			/* GSAP animation */
 			.setTween(slideTl)
 			/* scrollMagic indicators */
-			.addIndicators({
+			/* 			.addIndicators({
 				colorStart: 'white',
 				colorTrigger: 'red',
 				name: 'slide',
-			})
+			}) */
 			/* scrollMagic controller */
 			.addTo(controller);
 
@@ -67,12 +67,12 @@ function animateSlides() {
 			duration: '100%',
 			triggerHook: 0,
 		})
-			.addIndicators({
+			/* 			.addIndicators({
 				colorStart: 'blue',
 				colorTrigger: 'yellow',
 				name: 'page',
 				indent: 300,
-			})
+			}) */
 			.setPin(slide, { pushFollowers: false })
 			.setTween(pageTl)
 			.addTo(controller);
