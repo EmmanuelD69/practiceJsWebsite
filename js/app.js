@@ -56,7 +56,6 @@ function animateSlides() {
 		const pageTl = gsap.timeline();
 		let nextSlide =
 			slides.length - 1 === index ? '.fashion' : slides[index + 1];
-		console.log(nextSlide);
 		pageTl.fromTo(nextSlide, { y: '0%' }, { y: '50%' });
 		pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 });
 		pageTl.fromTo(nextSlide, { y: '50%' }, { y: '0%' }, '-=0.5');
@@ -86,7 +85,6 @@ const burger = document.querySelector('.burger');
 function cursor(e) {
 	mouse.style.top = e.pageY + 'px';
 	mouse.style.left = e.pageX + 'px';
-	// console.log(mouse.style.top, mouse.style.left);
 }
 
 function activeCursor(e) {
@@ -107,6 +105,7 @@ function activeCursor(e) {
 	}
 }
 
+/* gestion du clic sur le burger */
 function navToggle(e) {
 	if (!e.target.classList.contains('active')) {
 		e.target.classList.add('active');
@@ -135,6 +134,7 @@ function navToggle(e) {
 /* introducing barba.js */
 /* we need to target the logo to apply dynamically the correct href because when animation is done, it is only done on the section, not on the nav-bar, so original logo href is still active and need to be updated */
 const logo = document.querySelector('#logo');
+// const swipeTitle = document.querySelector('.swipeTitle');
 barba.init({
 	views: [
 		{
@@ -143,6 +143,7 @@ barba.init({
 				animateSlides();
 				/* logo href need to be updated dynamicaly to work properly*/
 				logo.href = './index.html';
+				// swipeTitle.innerHTML = '...home';
 			},
 			beforeLeave() {
 				slideScene.destroy();
@@ -155,6 +156,7 @@ barba.init({
 			beforeEnter() {
 				/* logo href need to be updated dynamicaly to work properly*/
 				logo.href = '../index.html';
+				// swipeTitle.innerHTML = '...fashion';
 			},
 		},
 	],
