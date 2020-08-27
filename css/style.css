@@ -310,6 +310,21 @@ body.hide {
 	left: 0;
 	position: fixed;
 	transform: translateX(-100%);
+	display: flex;
+	justify-items: center;
+	align-items: center;
+}
+
+.swipe span {
+	/* color: rgb(86, 124, 228); */
+	text-align: center;
+	font-size: 10rem;
+	font-family: 'Abril Fatface', cursive;
+}
+
+.swipe0 {
+	background-color: rgb(255, 139, 93);
+	z-index: 6;
 }
 
 .swipe1 {

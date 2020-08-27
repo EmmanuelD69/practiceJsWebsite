@@ -169,7 +169,7 @@ barba.init({
 				tl.fromTo(current.container, 1, { opacity: 1 }, { opacity: 0 });
 				tl.fromTo(
 					'.swipe',
-					0.75,
+					1,
 					{ x: '-100%' },
 					{ x: '0%', onComplete: done },
 					'-=0.5'
@@ -187,7 +187,7 @@ barba.init({
 					'.swipe',
 					1,
 					{ x: '0%' },
-					{ x: '100%', stagger: '0.5', onComplete: done }
+					{ x: '100%', stagger: '0.25', onComplete: done }
 				);
 				tl.fromTo(next.container, 1, { opacity: 0 }, { opacity: 1 });
 			},
