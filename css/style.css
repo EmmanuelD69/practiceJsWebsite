@@ -1,30 +1,34 @@
 /* font-family: 'Abril Fatface', cursive;
 font-family: 'Montserrat', sans-serif; */
 
+/* GLOBAL WEBSITE SETTING */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
+/* pages global settings */
 body {
+	position: relative;
 	background: #17181a;
 	font-family: 'Montserrat', sans-serif;
-	/* to avoid scroll bar to appear when sliders are moving */
+	/* to avoid scroll bar to appear when the divs that cover the contents will move to the side */
 	overflow-x: hidden;
-	position: relative;
 }
 
-/* to position the sections of our main content one other each others */
+/* to position the sections of our main content, one other each others */
 main {
 	position: absolute;
 }
 
+/* logo settings */
 #logo {
 	color: white;
 	font-family: 'Abril Fatface', cursive;
 }
 
+/* navbar settings */
 .nav-header {
 	min-height: 10vh;
 	font-size: 1rem;
@@ -45,6 +49,7 @@ main {
 	animation: fadein 4s;
 }
 
+/* burger lines visual settings */
 .line1,
 .line2 {
 	width: 3rem;
@@ -54,6 +59,7 @@ main {
 	pointer-events: none;
 }
 
+/* section containers settings */
 .slide {
 	min-height: 100vh;
 	margin: 0 auto;
@@ -65,6 +71,7 @@ main {
 	background: #17181a;
 }
 
+/* text containers settings */
 .hero-description {
 	display: flex;
 	flex-direction: column;
@@ -76,6 +83,7 @@ main {
 	position: relative;
 }
 
+/* image container settings */
 .hero-img {
 	position: relative;
 	flex: 1;
@@ -84,12 +92,14 @@ main {
 	overflow: hidden;
 }
 
+/* image settings */
 .hero-img img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
+/* text between spans settings */
 .mountain-span {
 	color: rgb(86, 124, 228);
 }
@@ -102,17 +112,20 @@ main {
 	color: rgb(255, 139, 93);
 }
 
+/* text main titles settings */
 .hero-description h2 {
 	font-family: 'Abril Fatface';
 	font-size: 5rem;
 }
 
+/* text paragraphes settings */
 .hero-description p {
 	padding: 3rem 0rem;
 	font-size: 1.5rem;
 	color: rgb(223, 223, 223);
 }
 
+/* turning link balise into a button */
 .explore {
 	padding: 1rem 2rem;
 	background: none;
@@ -125,6 +138,7 @@ main {
 	cursor: pointer;
 }
 
+/* burger navbar settings */
 .nav-bar {
 	position: fixed;
 	top: 0;
@@ -141,10 +155,12 @@ main {
 	-webkit-clip-path: circle(50px at 100% -10%);
 }
 
+/* setting cursor to show pointer when hovering the burger */
 .burger {
 	cursor: pointer;
 }
 
+/* social networks links settings */
 .nav-links {
 	font-size: 3rem;
 	flex-basis: 30rem;
@@ -154,20 +170,24 @@ main {
 	padding: 3rem 0rem;
 }
 
+/* contact container settings */
 .contact {
 	flex-basis: 30rem;
 }
 
+/* contact title settings */
 .contact h2 {
 	font-size: 3rem;
 	padding: 2rem 0rem;
 }
 
+/* contact paragraphe settings */
 .contact p {
 	font-size: 1.5rem;
 	line-height: 2rem;
 }
 
+/* divs covering sections settings */
 .reveal-img,
 .reveal-text {
 	position: fixed;
@@ -178,6 +198,7 @@ main {
 	left: 0;
 }
 
+/* div cursor settings, it will move around with the cursor when moving the mouse - see details on app.js */
 .cursor {
 	width: 3rem;
 	height: 3rem;
@@ -191,6 +212,7 @@ main {
 	transform-origin: 75% 75%;
 }
 
+/* cursor animations on hover effect */
 .cursor.nav-active {
 	transition: all 0.2s ease-in-out;
 	background: rgb(255, 139, 93);
