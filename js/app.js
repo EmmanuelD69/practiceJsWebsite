@@ -8,6 +8,7 @@ let slideScene;
 let pageScene;
 let fashionScene;
 let transylvaniaScene;
+let trekkingScene;
 
 const mouse = document.querySelector(".cursor");
 const mouseTxt = mouse.querySelector("span");
@@ -62,8 +63,7 @@ function animateSlides() {
 
     /* new animation */
     const pageTl = gsap.timeline();
-    let nextSlide =
-      slides.length - 1 === index ? ".fashion" : slides[index + 1];
+    let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
     pageTl.fromTo(nextSlide, { y: "0%" }, { y: "50%" });
     pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 });
     pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.5");
@@ -107,6 +107,37 @@ function transylvaniaAnimation() {
 
     /* scene */
     transylvaniaScene = new ScrollMagic.Scene({
+      triggerElement: slide,
+      duration: "90%",
+      triggerHook: 0,
+    })
+      .setPin(slide, { pushFollowers: false })
+      .setTween(slideTl)
+      .addTo(controller);
+  });
+}
+
+/* function to manage animations on trekking page */
+function trekkingAnimation() {
+  controller = new ScrollMagic.Controller();
+  const slides = document.querySelectorAll(".trekking-slide");
+  slides.forEach((slide, index, slides) => {
+    const slideTl = gsap.timeline({ defaults: { duration: 1 } });
+    let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
+    const nextImg = nextSlide.querySelector("img");
+    const nextText = nextSlide.querySelector("p");
+    slideTl.fromTo(slide, { opacity: 1 }, { opacity: 0 });
+    slideTl.fromTo(nextSlide, { opacity: 0 }, { opacity: 1 }, "-=1");
+    slideTl.fromTo(
+      nextImg,
+      { opacity: 0, x: "200%" },
+      { opacity: 1, x: "0%" },
+      "-=1"
+    );
+    slideTl.fromTo(nextText, { x: "-200%" }, { x: "0%" });
+
+    /* scene */
+    trekkingScene = new ScrollMagic.Scene({
       triggerElement: slide,
       duration: "90%",
       triggerHook: 0,
@@ -220,23 +251,35 @@ barba.init({
       },
     },
     {
-      namespace: "fashion",
-      beforeEnter() {
-        /* logo href need to be updated dynamicaly to work properly*/
-        logo.href = "../index.html";
-        fashionAnimation();
-      },
-      beforeLeave() {
-        controller.destroy();
-        fashionScene.destroy();
-      },
-    },
-    {
       namespace: "transylvania",
       beforeEnter() {
         /* logo href need to be updated dynamicaly to work properly*/
         logo.href = "../index.html";
         transylvaniaAnimation();
+      },
+      beforeLeave() {
+        controller.destroy();
+        transylvaniaScene.destroy();
+      },
+    },
+    {
+      namespace: "trekking",
+      beforeEnter() {
+        /* logo href need to be updated dynamicaly to work properly*/
+        logo.href = "../index.html";
+        trekkingAnimation();
+      },
+      beforeLeave() {
+        controller.destroy();
+        trekkingScene.destroy();
+      },
+    },
+    {
+      namespace: "fashion",
+      beforeEnter() {
+        /* logo href need to be updated dynamicaly to work properly*/
+        logo.href = "../index.html";
+        fashionAnimation();
       },
       beforeLeave() {
         controller.destroy();
