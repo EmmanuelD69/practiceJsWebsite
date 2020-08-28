@@ -37,6 +37,12 @@ main {
 	padding: 2rem 0rem;
 	z-index: 2;
 	position: relative;
+	/* fadin effect on the navbar when loading page */
+	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 2s; /* Firefox < 16 */
+	-ms-animation: fadein 2s; /* Internet Explorer */
+	-o-animation: fadein 2s; /* Opera < 12.1 */
+	animation: fadein 4s;
 }
 
 .line1,
@@ -68,7 +74,6 @@ main {
 	flex-basis: 25rem;
 	padding-left: 5rem;
 	position: relative;
-	/* background: rgb(84, 122, 46); */
 }
 
 .hero-img {
@@ -205,11 +210,13 @@ main {
 	transform: translate(-50%, -50%);
 }
 
+/* setting the divs that will cover the sections contents */
 .title {
 	position: relative;
 	overflow: hidden;
 }
 
+/* setting the cover divs size and position */
 .title-swipe {
 	width: 100%;
 	height: 100%;
@@ -220,6 +227,7 @@ main {
 	transform: translateY(100%);
 }
 
+/* setting the cover divs background colors so we can give with Js a smooth effect of filling titles with color */
 .t-swipe1 {
 	background: rgb(86, 124, 228);
 }
@@ -235,11 +243,13 @@ main {
 	position: static !important;
 }
 
+/* class hide is created in our Js code to avoid the scroll bar from appearing on the window side when we click on our burger */
 body.hide {
 	overflow: hidden;
 }
 
-/* Other pages Css */
+/* FASHION PAGE CSS */
+/* fashion sections global settings */
 .fashion1,
 .fashion2,
 .fashion3 {
@@ -255,28 +265,29 @@ body.hide {
 	position: relative;
 }
 
+/* fashion-img container size */
 .fashion-img {
 	height: 70vh;
 	flex-basis: 30rem;
 }
 
-.fashion-text {
-	flex: 1;
-	position: relative;
-	flex-basis: 25rem;
-}
-
+/* fashion images settings */
 .fashion-img img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.fashion-text h1 {
+/* fashion title settings */
+.fashion-text {
+	flex: 1;
+	position: relative;
+	flex-basis: 25rem;
 	font-size: 6rem;
 	padding: 5rem 0rem;
 }
 
+/* fashion page titles */
 .fashion1 h1 {
 	color: rgb(255, 139, 93);
 }
@@ -287,12 +298,14 @@ body.hide {
 	color: rgb(167, 110, 231);
 }
 
+/* fashion page paragraphes */
 .fashion-text p {
 	font-size: 2rem;
 	padding: 2rem 2rem 0rem 0rem;
 	margin-bottom: 10rem;
 }
 
+/* fashion page sections number */
 .fashion-nr {
 	font-size: 15rem;
 	position: absolute;
@@ -315,39 +328,92 @@ body.hide {
 	align-items: center;
 }
 
+/* for the text written into the 1st swipe div */
 .swipe span {
-	/* color: rgb(86, 124, 228); */
 	text-align: center;
 	font-size: 10rem;
 	font-family: 'Abril Fatface', cursive;
 }
 
+/* background-color swipe */
 .swipe0 {
 	background-color: rgb(255, 139, 93);
 	z-index: 6;
 }
 
+/* background-img swipe */
 .swipe1 {
-	/* background-color: #c1af9f; */
 	background-image: url(../img/fashion-img1.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	z-index: 5;
 }
+
+/* background-img swipe */
 .swipe2 {
-	/* background-color: #ebe5e9; */
 	background-image: url(../img/fashion-img2.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	z-index: 4;
 }
+
+/* background-img swipe */
 .swipe3 {
-	/* background-color: #454547; */
 	background-image: url(../img/fashion-img3.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	z-index: 3;
+}
+
+/* ANIMATION FADIN & BROWSERS COMPATIBILITY*/
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
