@@ -144,7 +144,6 @@ barba.init({
 				animateSlides();
 				/* logo href need to be updated dynamicaly to work properly*/
 				logo.href = './index.html';
-				// swipeTitle.innerHTML = '...home';
 			},
 			beforeLeave() {
 				slideScene.destroy();
@@ -158,7 +157,10 @@ barba.init({
 				/* logo href need to be updated dynamicaly to work properly*/
 				logo.href = '../index.html';
 				fashionAnimation();
-				// swipeTitle.innerHTML = '...fashion';
+			},
+			beforeLeave() {
+				controller.destroy();
+				fashionScene.destroy();
 			},
 		},
 	],
