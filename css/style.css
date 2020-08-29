@@ -551,6 +551,8 @@ body.hide {
     width: 40%;
     margin: auto;
   }
+
+  /* other pages responsive */
   .fashion-slide,
   .transylvania-slide,
   .trekking-slide {
@@ -562,14 +564,18 @@ body.hide {
   .fashion-img img,
   .transylvania-img img,
   .trekking-img img {
-    height: 50vh;
-    object-position: top;
+    width: 50%;
+    height: auto;
+  }
+
+  .scrollmagic-pin-spacer {
+    margin: 0rem;
   }
 
   .fashion-text,
   .transylvania-text,
   .trekking-text {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     padding: 0;
     font-size: 1.2rem;
   }
@@ -577,7 +583,7 @@ body.hide {
   .fashion-text p,
   .transylvania-text p,
   .trekking-text p {
-    margin-bottom: 2rem;
+    margin: 0rem 1rem;
     padding: 0;
     font-size: 1.2rem;
   }
@@ -585,6 +591,7 @@ body.hide {
   .transylvania-text h1,
   .trekking-text h1 {
     font-size: 2rem;
+    margin: 0rem;
   }
   .fashion-nr,
   .transylvania-nr,
