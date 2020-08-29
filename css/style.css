@@ -371,46 +371,86 @@ body.hide {
   display: flex;
   justify-items: center;
   align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* for the text written into the 1st swipe div */
-.swipe span {
+/* .swipe span,
+.swipetransylvania span,
+.swipetrekking span,
+.swipefashion span {
   text-align: center;
   font-size: 10rem;
   font-family: "Abril Fatface", cursive;
-}
+} */
 
-/* background-color swipe */
-.swipe0 {
-  background-color: rgb(255, 139, 93);
+/* background-color main swipe (not implemented yet)*/
+/* .swipe0transylvania,
+.swipe0trekking,
+.swipe0fashion {
+  z-index: 6;
+} */
+.swipe0transylvania {
+  background-color: rgb(86, 124, 228);
   z-index: 6;
 }
-
-/* background-img swipe */
-.swipe1 {
-  background-image: url(../img/fashion-img1.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.swipe0trekking {
+  background-color: rgb(167, 110, 231);
   z-index: 5;
 }
-
-/* background-img swipe */
-.swipe2 {
-  background-image: url(../img/fashion-img2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.swipe0fashion {
+  background-color: rgb(255, 139, 93);
   z-index: 4;
 }
 
-/* background-img swipe */
-.swipe3 {
+/* background-img swipe1 (not implemented yet)*/
+.swipe1transylvania,
+.swipe1trekking,
+.swipe1fashion {
+  z-index: 5;
+}
+.swipe1transylvania {
+  background-image: url(../img/transylvania1.jpg);
+}
+.swipe1trekking {
+  background-image: url(../img/tibet1.jpg);
+}
+.swipe1fashion {
+  background-image: url(../img/fashion-img1.png);
+}
+
+/* background-img swipe2 (not implemented yet)*/
+.swipe2transylvania,
+.swipe2trekking,
+.swipe2fashion {
+  z-index: 4;
+}
+.swipe2transylvania {
+  background-image: url(../img/transylvania2.jpg);
+}
+.swipe2trekking {
+  background-image: url(../img/tibet2.jpg);
+}
+.swipe2fashion {
+  background-image: url(../img/fashion-img2.png);
+}
+
+/* background-img swipe3 (not implemented yet)*/
+.swipe3transylvania,
+.swipe3trekking,
+.swipe3fashion {
+  z-index: 7;
+}
+.swipe3transylvania {
+  background-image: url(../img/transylvania3.jpg);
+}
+.swipe3trekking {
+  background-image: url(../img/tibet3.jpg);
+}
+.swipe3fashion {
   background-image: url(../img/fashion-img3.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 3;
 }
 
 /* ANIMATION FADIN & BROWSERS COMPATIBILITY*/

@@ -287,6 +287,7 @@ barba.init({
       },
     },
   ],
+
   transitions: [
     {
       /* action on the current section when we leave it */
@@ -314,7 +315,7 @@ barba.init({
         const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
         tl.fromTo(
           ".swipe",
-          1,
+          0.75,
           { x: "0%" },
           { x: "100%", stagger: "0.25", onComplete: done }
         );
