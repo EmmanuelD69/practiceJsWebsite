@@ -196,7 +196,7 @@ function activeCursor(e) {
   if (item.classList.contains("explore")) {
     mouse.classList.add("explore-active");
     gsap.to(".title-swipe", 1, { y: "0%" });
-    mouseTxt.innerText = "Tap";
+    mouseTxt.innerText = "Clic";
   } else {
     mouse.classList.remove("explore-active");
     gsap.to(".title-swipe", 1, { y: "100%" });
