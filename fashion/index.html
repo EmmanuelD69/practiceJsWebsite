@@ -1,120 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta
+			name="description"
+			content="Ce site existe dans le but de m'exercer à Javascript"
+		/>
+		<meta name="robots" content="index,follow" />
+		<title>My Js Practice Website - fashion page</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat&display=swap"
+			rel="stylesheet"
+		/>
+		<link type="image/png" rel="icon" href="../img/favicon.ico" />
+		<link rel="stylesheet" href="../css/style.css" />
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<meta name="description" content="Ce site existe dans le but de m'exercer à Javascript" />
-	<meta name="robots" content="index,follow" />
-	<title>My Js Practice Website</title>
-	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat&display=swap"
-		rel="stylesheet" />
-	<link type="image/png" rel="icon" href="../img/favicon.ico" />
-	<link rel="stylesheet" href="../css/style.css" />
-</head>
+	<!-- Tag pour barba.js / ce qui se trouve englobé par wrapper ne sera pas affecté -->
 
-<!-- Tag pour barba.js / ce qui se trouve englobé par wrapper ne sera pas affecté -->
-
-<body data-barba="wrapper">
-	<header class="nav-header">
-		<h1><a href="../index.html" id="logo">Someday.</a></h1>
-		<!-- Burger menu icon -->
-		<div class="burger">
-			<div class="line1"></div>
-			<div class="line2"></div>
+	<body data-barba="wrapper">
+		<header class="nav-header">
+			<h1><a href="../index.html" id="logo">Someday.</a></h1>
+			<!-- Burger menu icon -->
+			<div class="burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+			</div>
+		</header>
+		<!-- Tag pour barba.js / ce qui se trouve englobé par container sera affecté -->
+		<main data-barba="container" data-barba-namespace="fashion">
+			<section class="fashion1 fashion-slide">
+				<div class="fashion-text">
+					<h1 class="fashion-text">Sous son Emprise</h1>
+					<p>
+						Nous sommes tous soumis à l’emprise de la mode, parfois à notre insu
+						et même contre notre gré. Doit-on alors accuser les marques ou les
+						créateurs de manipuler la société par des mécanismes diaboliques ?
+					</p>
+				</div>
+				<div class="fashion-img">
+					<img src="../img/fashion-img1.png" alt="" />
+				</div>
+				<div class="fashion-nr"><span>01</span></div>
+			</section>
+			<section class="fashion2 fashion-slide">
+				<div class="fashion-text">
+					<h1 class="fashion-text">Les créateurs</h1>
+					<p>
+						Ce serait oublier qu’ils sont eux aussi victimes de la mode. Sommés
+						de découvrir avant tout le monde quelles seront les prochaines
+						tendances, ils sont confrontés à un enjeu vital : s’ils se trompent,
+						ce n’est pas un vêtement qui finira au placard, mais leur réputation
+						ou leur carrière.
+					</p>
+				</div>
+				<div class="fashion-img">
+					<img src="../img/fashion-img3.png" alt="" />
+				</div>
+				<div class="fashion-nr"><span>02</span></div>
+			</section>
+			<section class="fashion3 fashion-slide">
+				<div class="fashion-text">
+					<h1 class="fashion-text">Dilemme</h1>
+					<p>
+						Pourquoi tolérons-nous cette servitude ? Car, en réalité, il
+						n’existe qu’une seule personne suffisamment forte pour nous
+						contraindre à suivre la mode : nous-même.
+					</p>
+				</div>
+				<div class="fashion-img">
+					<img src="../img/fashion-img2.png" alt="" />
+				</div>
+				<div class="fashion-nr"><span>03</span></div>
+			</section>
+		</main>
+		<nav class="nav-bar">
+			<ul class="nav-links">
+				<h3>Twitter</h3>
+				<h3>Youtube</h3>
+				<h3>Instagram</h3>
+			</ul>
+			<div class="contact">
+				<h2>Stay in touch.</h2>
+				<p>
+					Ceci n'est pas un site officiel, il s'agit simplement d'un travail
+					personnel accompli dans le cadre de mon auto-formation à javascript.
+					<br /><br />
+					Si vous souhaitez me contacter vous pouvez le faire à cette adresse:
+					<br /><a
+						href="mailto:emmanueldevfr@gmail.com"
+						style="color: rgb(106, 49, 170)"
+						>emmanueldevfr@gmail.com</a
+					>
+				</p>
+			</div>
+		</nav>
+		<div class="cursor">
+			<span class="cursor-text"></span>
 		</div>
-	</header>
-	<!-- Tag pour barba.js / ce qui se trouve englobé par container sera affecté -->
-	<main data-barba="container" data-barba-namespace="fashion">
-		<section class="fashion1 fashion-slide">
-			<div class="fashion-text">
-				<h1 class="fashion-text">Sous son Emprise</h1>
-				<p>
-					Nous sommes tous soumis à l’emprise de la mode, parfois à notre insu et même contre notre gré.
-					Doit-on alors accuser les marques ou les créateurs de manipuler la société par des mécanismes
-					diaboliques ?
-				</p>
-			</div>
-			<div class="fashion-img">
-				<img src="../img/fashion-img1.png" alt="" />
-			</div>
-			<div class="fashion-nr"><span>01</span></div>
-		</section>
-		<section class="fashion2 fashion-slide">
-			<div class="fashion-text">
-				<h1 class="fashion-text">Les créateurs</h1>
-				<p>
-					Ce serait oublier qu’ils sont eux aussi victimes de la mode. Sommés de découvrir avant tout le monde
-					quelles seront les prochaines tendances, ils sont confrontés à un enjeu vital : s’ils se trompent,
-					ce n’est pas un vêtement qui finira au placard, mais leur réputation ou leur carrière.
-				</p>
-			</div>
-			<div class="fashion-img">
-				<img src="../img/fashion-img3.png" alt="" />
-			</div>
-			<div class="fashion-nr"><span>02</span></div>
-		</section>
-		<section class="fashion3 fashion-slide">
-			<div class="fashion-text">
-				<h1 class="fashion-text">Dilemme</h1>
-				<p>
-					Pourquoi tolérons-nous cette servitude ? Car, en réalité, il n’existe qu’une seule personne
-					suffisamment forte pour nous contraindre à suivre la mode : nous-même.
-				</p>
-			</div>
-			<div class="fashion-img">
-				<img src="../img/fashion-img2.png" alt="" />
-			</div>
-			<div class="fashion-nr"><span>03</span></div>
-		</section>
-	</main>
-	<nav class="nav-bar">
-		<ul class="nav-links">
-			<h3>Twitter</h3>
-			<h3>Youtube</h3>
-			<h3>Instagram</h3>
-		</ul>
-		<div class="contact">
-			<h2>Stay in touch.</h2>
-			<p>
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-				ad voluptates architecto magni quaerat maxime libero soluta molestiae
-				perferendis eius?
-			</p>
-		</div>
-	</nav>
-	<div class="cursor">
-		<span class="cursor-text"></span>
-	</div>
-	<div class="swipe swipe0transylvania"><span class="swipeTitle"></span></div>
-	<div class="swipe swipe0trekking"></div>
-	<div class="swipe swipe0fashion"></div>
-	<!-- adding barba Js -->
-	<script src="https://unpkg.com/@barba/core"></script>
-	<!-- adding scrollmagic minified -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
-		integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA=="
-		crossorigin="anonymous"></script>
-	<!-- adding scrollmagic indicators -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"
-		integrity="sha512-Ey+nIg+Ue8gUAaCNjR1KHR8nwDjWn9QXoQbynR/X+V66s6u1oqynnuRQ8zSgg5f5gBNb2Bzsu1pItCi3sPkbfA=="
-		crossorigin="anonymous"></script>
-	<!-- adding scrollmagic animation plugin for gsap -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"
-		integrity="sha512-A98SmLRZISk4eIxQBeCm8k0jAcwN3A3lBx4hr7baoMpV1VpxcxlZIhi5fJIZN50sQ5RlCzx8yV+Voy2cR6x0aA=="
-		crossorigin="anonymous"></script>
-	<!-- adding gsap minified -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"
-		integrity="sha512-JO6JyFPJupQKZf7icgZkHwuq/rAQxH7COqvEd4WdK52AtHPedwHog05T69pIelI69jVN/zZbW6TuHfH2mS8j/Q=="
-		crossorigin="anonymous"></script>
-	<!-- adding scrolltrigger gsap plugin for later use -->
-	<!-- 		<script
+		<div class="swipe swipe0transylvania"><span class="swipeTitle"></span></div>
+		<div class="swipe swipe0trekking"></div>
+		<div class="swipe swipe0fashion"></div>
+		<!-- adding barba Js -->
+		<script src="https://unpkg.com/@barba/core"></script>
+		<!-- adding scrollmagic minified -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+			integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA=="
+			crossorigin="anonymous"
+		></script>
+		<!-- adding scrollmagic indicators -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"
+			integrity="sha512-Ey+nIg+Ue8gUAaCNjR1KHR8nwDjWn9QXoQbynR/X+V66s6u1oqynnuRQ8zSgg5f5gBNb2Bzsu1pItCi3sPkbfA=="
+			crossorigin="anonymous"
+		></script>
+		<!-- adding scrollmagic animation plugin for gsap -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"
+			integrity="sha512-A98SmLRZISk4eIxQBeCm8k0jAcwN3A3lBx4hr7baoMpV1VpxcxlZIhi5fJIZN50sQ5RlCzx8yV+Voy2cR6x0aA=="
+			crossorigin="anonymous"
+		></script>
+		<!-- adding gsap minified -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"
+			integrity="sha512-JO6JyFPJupQKZf7icgZkHwuq/rAQxH7COqvEd4WdK52AtHPedwHog05T69pIelI69jVN/zZbW6TuHfH2mS8j/Q=="
+			crossorigin="anonymous"
+		></script>
+		<!-- adding scrolltrigger gsap plugin for later use -->
+		<!-- 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"
 			integrity="sha512-m/n857VfrPYUcRvzCfqfrC9aMT06TQA2V0DcX/Ovovrhswa3038FfYmHlB0l/ZMukVyKWmiwZI4Pnnd7v3FwFQ=="
 			crossorigin="anonymous"
 		></script> -->
-	<script src="../js/app.js"></script>
-</body>
-
+		<script src="../js/app.js"></script>
+	</body>
 </html>
