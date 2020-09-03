@@ -107,7 +107,7 @@ function transylvaniaAnimation() {
 		/* scene */
 		transylvaniaScene = new ScrollMagic.Scene({
 			triggerElement: slide,
-			duration: '90%',
+			duration: '100%',
 			triggerHook: 0,
 		})
 			.setPin(slide, { pushFollowers: false })
